@@ -30,16 +30,14 @@ function listening() {
 }
 
 // GET route
-app.get("/all", sendData);
+
 //sendData function
 function sendData(req, res) {
-    projectData = req.body;
-    console.log(projectData);
     res.status(200).send(projectData);
 }
-
+app.get("/all", sendData);
 // POST route
-app.post("/add", addData);
+
 //callback function
 function addData(req, res) {
     projectData = {
@@ -50,3 +48,5 @@ function addData(req, res) {
     console.log(projectData);
     res.status(200).send(projectData);
 }
+
+app.post("/addData", addData);
